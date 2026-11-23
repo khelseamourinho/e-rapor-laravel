@@ -13,7 +13,7 @@
                         {{$nilai_angka}}{{ !$loop->last ? ',' : '' }}
                     @endforeach
                 </p> --}}
-                <a href="/rapor/{{$rapor['id']}}" class="font-medium text-blue-500 hover:underline" >Detail rapor &raquo;</a>
+                <a href="/rapor/{{$rapor['slug']}}" class="font-medium text-blue-500 hover:underline" >Detail rapor &raquo;</a>
             </div>
         </article>
     @endforeach    
