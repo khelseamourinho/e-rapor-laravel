@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Arr;
+
+
 class Post{
     public static function all(){
 
@@ -24,4 +27,14 @@ class Post{
             ]
             ];
     }
-};
+
+    public static function find($slug) : Array {
+        $rapor = Arr::first(static::all(), fn ($rapor) => $rapor['slug'] == $slug );
+        
+        if (! $rapor){
+            abort(404);
+        };
+        return $rapor;
+
+    }
+}

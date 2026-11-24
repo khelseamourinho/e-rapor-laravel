@@ -17,9 +17,7 @@ Route::get('/daftar_rapor', function () {
 });
 
 Route::get('/rapor/{slug}', function ($slug) {
-    $rapor = Arr::first(Post::all(), function ($rapor) use ($slug) {
-        return $rapor['slug'] == $slug;
-    });
+    $rapor = Post::find($slug);
     
     return view('rapor', ['title' => 'Rapor', 'rapor' => $rapor]);
 });
