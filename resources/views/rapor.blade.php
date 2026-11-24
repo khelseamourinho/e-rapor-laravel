@@ -6,11 +6,12 @@
             <div>
                 <p class="my-4 font-light">Kelas : {{$rapor['kelas']}}</p>
                 <p>Semester {{$rapor ['semester']}}</p>
-                <p>Nilai :
+                {{-- <p>Nilai :
                     @foreach ($rapor['nilai'] as $nilai_angka)
                         {{$nilai_angka}}{{ !$loop->last ? ',' : '' }}
                     @endforeach
-                </p>
+                </p> --}}
+                <p>Nilai : {{$rapor['nilai']}}</p>
                 <a href="/daftar_rapor" class="font-medium text-blue-500 hover:underline" >Kembali ke daftar rapor &laquo;</a>
             </div>
         </article>
