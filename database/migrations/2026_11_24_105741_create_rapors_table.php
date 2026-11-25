@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('tahun_ajaran');
             $table->string('kelas');
-            $table->integer('semester');
+            $table->string('semester');
             $table->float('nilai');
             $table->timestamps();
         });
