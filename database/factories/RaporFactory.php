@@ -49,7 +49,7 @@ class RaporFactory extends Factory
                 $urutanRapor[] = [
                     'slug' => Str::slug("rapor-kelas-{$kelas}-semester-{$semester}-{$tahun1}-{$tahun2}"),
                     'tahun_ajaran' => $tahunAjaran,
-                    'kelas' => "Kelas {$kelas}",
+                    'kelas' => $kelas,
                     'semester' => $semester,
                 ];
             }
