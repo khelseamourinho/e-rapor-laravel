@@ -7,6 +7,7 @@
             <h2 class="mb-1 text-2xl" >Tahun Ajaran : {{$rapor ['tahun_ajaran']}}</h2>
             <div>
                 <p class="my-4 font-light">Kelas : {{$rapor['kelas']}}</p>
+                <p class="my-4 font-light">Wali Kelas : {{$rapor->wali->name}}</p>
                 <p>Semester {{$rapor ['semester']}} | {{$rapor -> created_at -> format('j F Y')}}</p>
                 {{-- <p>Nilai :
                     @foreach ($rapor['nilai'] as $nilai_angka)

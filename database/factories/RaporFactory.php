@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Guru;
 use App\Models\Rapor;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Support\Str;
@@ -27,7 +29,8 @@ class RaporFactory extends Factory
         return [
             'slug' => Str::slug("rapor-kelas-{$kelas}-semester-{$semester}-" . fake()->unique()->numerify('###')),
             'tahun_ajaran' => "{$tahunAwal}/{$tahunAkhir}",
-            'kelas' => "Kelas {$kelas}",
+            'kelas' => $kelas,
+            'wali_id' => Guru::factory(), 
             'semester' => $semester,
             'nilai' => fake()->numberBetween(75, 98),
         ];
@@ -44,12 +47,14 @@ class RaporFactory extends Factory
             $tahun1 = $tahunMulai + ($kelas - 1);
             $tahun2 = $tahun1 + 1;
             $tahunAjaran = "{$tahun1}/{$tahun2}";
+            $waliId = Guru::factory();
 
             foreach (['Ganjil', 'Genap'] as $semester) {
                 $urutanRapor[] = [
                     'slug' => Str::slug("rapor-kelas-{$kelas}-semester-{$semester}-{$tahun1}-{$tahun2}"),
                     'tahun_ajaran' => $tahunAjaran,
                     'kelas' => $kelas,
+                    'wali_id' => $waliId,
                     'semester' => $semester,
                 ];
             }
