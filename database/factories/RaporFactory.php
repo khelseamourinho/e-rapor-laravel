@@ -30,6 +30,7 @@ class RaporFactory extends Factory
             'slug' => Str::slug("rapor-kelas-{$kelas}-semester-{$semester}-" . fake()->unique()->numerify('###')),
             'tahun_ajaran' => "{$tahunAwal}/{$tahunAkhir}",
             'kelas' => $kelas,
+            'id_siswa' => fake()->randomNumber(3),
             'wali_id' => Guru::factory(), 
             'semester' => $semester,
             'nilai' => fake()->numberBetween(75, 98),
