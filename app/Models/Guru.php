@@ -18,6 +18,7 @@ class Guru extends Model
 
     // public $incrementing = false;
 
+    // protected $with = ['rapor'];
     protected $fillable = ['name', 'nuptk', 'nip', 'status'];
     protected $primaryKey = 'id_guru';
 

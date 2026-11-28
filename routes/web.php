@@ -14,11 +14,17 @@ Route::get('/kelola_rapor', function () {
 });
 
 Route::get('/daftar_rapor', function () {
-    return view('daftar_rapor', ['title' => 'Daftar Rapor', 'daftar_rapor' => Rapor::all() ]);
+    $daftar_rapor = Rapor::all();
+    // $daftar_rapor = Rapor::with(['wali'])->latest()->get();
+    return view('daftar_rapor', ['title' => 'Daftar Rapor', 'daftar_rapor' => $daftar_rapor ]);
+
+// //    $daftar_rapor = Rapor::all()
+//     return view('daftar_rapor', ['title' => 'Daftar Rapor', 'daftar_rapor' => Rapor::all() ]);
 });
 
 Route::get('/rapor/{rapor:slug}', function (Rapor $rapor) {
-    // $rapor = Rapor::find($id);
+    // $rapor = Rapor::latest()->get();
+
     return view('rapor', ['title' => 'Detail Rapor', 'rapor' => $rapor]);
 });
 

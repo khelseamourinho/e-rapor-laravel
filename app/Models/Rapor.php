@@ -11,6 +11,7 @@ class Rapor extends Model
 {
   use HasFactory;
 
+  protected $with = ['wali'];
   protected $table = 'rapor';
   protected $fillable = ['slug', 'kelas', 'semester', 'tahun_ajaran', 'nilai'];
 
