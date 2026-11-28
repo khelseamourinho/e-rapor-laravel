@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('tahun_ajaran');
             $table->string('kelas');
+            $table->integer('id_siswa');
             $table->foreignId('wali_id')->constrained(
                 table: 'gurus',
-                // indexName: 'rapor_wali_id',
                 column: 'id_guru'
             );
             $table->string('semester');
